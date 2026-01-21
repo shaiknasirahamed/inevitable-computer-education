@@ -142,6 +142,7 @@
   letter-spacing: 0.5px;
 }
   </style>
+<style>  /* --- Promo Banner (non-intrusive, namespaced) --- */  .mk-promo{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:16px;flex-wrap:wrap}  .mk-promo__img{flex:0 0 360px;max-width:100%;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.15)}  .mk-promo__info{color:#ffffff;background:rgba(0,0,0,.35);padding:12px 16px;border-radius:10px;backdrop-filter:blur(2px)}  .mk-promo__info a{color:#fffbeb;text-decoration:underline;font-weight:700}  .mk-promo--right{flex-direction:row}  .mk-promo--left{flex-direction:row-reverse}  @media (max-width:720px){.mk-promo{flex-direction:column}.mk-promo__info{width:100%;text-align:center}}  </style>
 </head>
 
 <body>
@@ -173,6 +174,7 @@
 </nav>
 
 <div class="hero" id="home">
+<div class="mk-promo mk-promo--right">    <img class="mk-promo__img" src="assets/coure-pamplates-banglore.png" alt="Course Banner">    <div class="mk-promo__info">      <div><strong>Full address:</strong> 53/17-1, R.V. Nagar, Kadapa – 516003</div>      <div><a href="https://maps.google.com/?q=YOUR+LOCATION" target="_blank" rel="noopener">View on Google Maps</a></div>    </div>  </div>
   <h2>Build Your IT Career With Real-Time Industry Training</h2>
   <p>Linux | AWS | DevOps | Azure | Windows Server</p>
   <a class="btn" href="#register">Enroll Now</a>
