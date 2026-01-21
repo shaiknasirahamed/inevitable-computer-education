@@ -105,3 +105,16 @@
     line-height: 1.6;
 }
 
+
+.trainer-tab-content {
+    padding: 20px;
+}
+
+.trainer-small-img {
+    width: 120px;
+    float: left;
+    margin-right: 15px;
+    border-radius: 8px;
+    border: 2px solid #2c5364;
+}
+
