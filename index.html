@@ -102,6 +102,11 @@
       margin-top: 40px;
     }
   </style>
+  #discover-truth iframe { height: 750px; }
+
+@media screen and (max-width:768px){
+  #discover-truth iframe { height: 520px; }
+}
 </head>
 
 <body>
@@ -120,17 +125,17 @@
   <a href="#register">Register</a>
   <a href="#youtube">YouTube</a>
   <a href="#contact">Contact</a>
+  <a href="assets/job-assistance-process.png" target="_blank">Job Assistance</a>
+<a href="Truth.pdf" target="_blank">Discover-Truth</a>
+
+
 </nav>
-<div class="placement-link" style="margin-top:20px; text-align:center;">
-  <h2>Placement Assistance</h2>
-  <p>100% <a href="assets/job-assistance-process.png" target="_blank">Job Assistance</a></p>
-</div>
 <div class="course-section">
     <img src="assets/coure-pamplates-banglore.png" 
          alt="Course Templates Bangalore" 
          style="float:left; margin-right:20px; width:200px; display:block;">
-    <p>Learn the best courses in Bangalore! Enroll now and start your career.</p>
-    <a href="/courses.html" class="btn">View Courses</a>
+
+ 
 </div>
 
 <div class="hero" id="home">
@@ -215,6 +220,24 @@
 
 <footer>
   <p>&copy; 2025 THE INEVITABLE COMPUTER EDUCATION & SOFTWARE TRAINING</p>
+  <section id="discover-truth">
+<section id="discover-truth" style="display:none;">
+  <h2>Discover-Truth</h2>
+
+  <div style="text-align:center; margin-bottom: 15px;">
+    <a class="btn" href="Truth.pdf" download>Download PDF</a>
+    <a class="btn" href="Truth.pdf" target="_blank">Open Fullscreen</a>
+    <button class="btn" type="button" onclick="closeDiscoverTruth()">Close</button>
+  </div>
+
+  <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.12);">
+    <iframe
+      src="Truth.pdf#toolbar=1&navpanes=0&scrollbar=1"
+      style="width:100%; height:750px; border:0;"
+      title="Discover Truth PDF">
+    </iframe>
+  </div>
+  </section>
 </footer>
 <!-- START: Add this at the END of your <body>, before </body> -->
 <div class="placement-link" style="margin-bottom:20px;">
@@ -257,6 +280,17 @@
       padding: 30px 15px;
     }
   }
+  /* Fix course image spacing */
+.course-section {
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    align-items: flex-start;
+}
+.course-section img {
+    margin-top: 0 !important;
+    float: none !important;
+}
 </style>
 
 <!-- SEO Meta Tags: Insert these inside your <head> for Google indexing -->
@@ -265,7 +299,23 @@
 <meta name="author" content="Shaik Nasir Ahamed">
 
 <!-- END: Paste block -->
+<script>
+  function openDiscoverTruth() {
+    const sec = document.getElementById("discover-truth");
+    if (sec) {
+      sec.style.display = "block";
+      sec.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
+  function closeDiscoverTruth() {
+    const sec = document.getElementById("discover-truth");
+    if (sec) {
+      sec.style.display = "none";
+      window.scrollTo({ top: 0, behavior: "smooth" }); // optional
+    }
+  }
+</script>
 </body>
 </html>
 
