@@ -106,7 +106,170 @@
 @media screen and (max-width:768px){
   #discover-truth iframe { height: 520px; }
 }
+/* ===== Attractive 3-Line Ticker (small + colorful + scrolling) ===== */
+.ticker-wrap{
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto 0;
+}
 
+.ticker-line{
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 8px 12px;
+  padding: 7px 0; /* small height */
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+/* Colorful backgrounds */
+.ticker-line.parents{
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+}
+.ticker-line.grads{
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+.ticker-line.truth{
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+}
+
+/* Moving track */
+.ticker-move{
+  display: inline-flex;
+  gap: 60px;
+  white-space: nowrap;
+  will-change: transform;
+  align-items: center;
+}
+
+/* Attractive pill for readability */
+.ticker-move .msg{
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #ffffff !important;     /* always visible */
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+/* Left → Right only */
+/* Make the moving element use actual text width */
+.ticker-move{
+  display: inline-flex;
+  width: max-content;           /* IMPORTANT */
+  white-space: nowrap;
+  will-change: transform;
+  align-items: center;
+}
+
+/* Left → Right full travel across screen */
+/* STOP MOVING */
+.ticker-move.ltr{
+  animation: none !important;
+  transform: none !important;
+}
+
+@keyframes scrollLTR{
+  0%   { transform: translateX(-110vw); }  /* start fully off-screen (left) */
+  100% { transform: translateX(110vw); }   /* end fully off-screen (right) */
+}
+
+/* Pause on hover */
+.ticker-line:hover .ticker-move{
+  animation-play-state: paused;
+}
+
+/* Mobile speed + size */
+@media (max-width:768px){
+  .ticker-move.left, .ticker-move.right{ animation-duration: 12s; }
+  .ticker-move .msg{ font-size: 12px; padding: 5px 12px; }
+  .ticker-line{ margin: 8px 8px; }
+}
+  /* Keep ticker in one place */
+.ticker-line{
+  overflow: hidden;          /* optional */
+  text-align: center;        /* keep centered */
+}
+
+/* Make the row not travel; keep it stable */
+.ticker-move{
+  width: 100%;
+  justify-content: center;
+}
+
+/* ================================
+   EFFECTS FOR EACH PILL (.msg)
+   ================================ */
+.ticker-move .msg{
+  position: relative;
+  overflow: hidden;          /* required for shine overlay */
+  display: inline-block;
+
+  /* Keep layout stable even if we "shake" */
+  transform: translateZ(0);
+  will-change: filter, text-shadow, transform;
+
+  /* Multi-effects */
+  animation:
+    microShake 0.14s infinite,
+    colorThrow 2.8s linear infinite,
+    glowPulse 1.6s ease-in-out infinite;
+}
+
+/* SHINE overlay (like sun beam passing) */
+.ticker-move .msg::after{
+  content: "";
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255,255,255,0.85) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  animation: sunShine 2.2s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* 1) Micro shake (tiny vibration) */
+@keyframes microShake{
+  0%   { transform: translate(0,0); }
+  25%  { transform: translate(0.6px,-0.4px); }
+  50%  { transform: translate(-0.5px,0.6px); }
+  75%  { transform: translate(0.4px,0.5px); }
+  100% { transform: translate(0,0); }
+}
+
+/* 2) Color throwing (rainbow cycling) */
+@keyframes colorThrow{
+  0%   { filter: hue-rotate(0deg) saturate(1.4); }
+  100% { filter: hue-rotate(360deg) saturate(1.4); }
+}
+
+/* 3) Glow + “bold feeling” pulse (no layout shift) */
+@keyframes glowPulse{
+  0%, 100%{
+    text-shadow: 0 0 6px rgba(255,255,255,0.35), 0 0 14px rgba(255,255,255,0.18);
+    letter-spacing: 0.2px;
+  }
+  50%{
+    text-shadow: 0 0 10px rgba(255,255,255,0.75), 0 0 28px rgba(255,230,150,0.65);
+    letter-spacing: 0.6px;
+  }
+}
+
+/* 4) Sun shine sweep */
+@keyframes sunShine{
+  0%   { transform: translateX(-120%) rotate(0.001deg); opacity: 0; }
+  15%  { opacity: 0.9; }
+  50%  { opacity: 0.9; }
+  100% { transform: translateX(120%) rotate(0.001deg); opacity: 0; }
+}
   </style>
 </head>
 
@@ -129,9 +292,27 @@
   <a href="assets/job-assistance-process.png" target="_blank">Job Assistance</a>
   <a href="career-guide.html">Career Guide</a>
   <a href="Truth.pdf" target="_blank">Discover-Truth</a>
-
-
 </nav>
+<!-- Parents -->
+<div class="ticker-line parents">
+  <div class="ticker-move ltr">
+    <span class="msg">Dear Parents: Click <b>Career Guidance</b> to choose the best path for your child.</span>
+  </div>
+</div>
+
+<!-- Graduates -->
+<div class="ticker-line grads">
+  <div class="ticker-move ltr">
+    <span class="msg">Dear  Graduates: Want a Software Engineer career (even without coding)? Click <b>Register</b> + watch a <b>Free Demo</b>.</span>
+  </div>
+</div>
+
+<!-- Discover-Truth -->
+<div class="ticker-line truth">
+  <div class="ticker-move ltr">
+    <span class="msg"> To Everyone: Click <b>Discover‑Truth</b> and read with an open heart.</span>
+  </div>
+</div>
 <div class="course-section">
     <img src="assets/coure-pamplates-banglore.png" 
          alt="Course Templates Bangalore" 
