@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>After 10th - Studies Guidance</title>
+  <style>
+    body{margin:0;font-family:Arial;background:#0b1220;color:#e5e7eb}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    .top{background:#111a2e;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
+    h1{margin:0;font-size:20px}
+    p{color:#a3a3a3;margin:8px 0 0;font-size:14px;line-height:1.5}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .card{background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
+    .card h2{margin:0 0 8px;font-size:16px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{cursor:pointer;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.06);font-weight:700;font-size:13px}
+    .chip:hover{border-color:rgba(34,197,94,.45);transform:translateY(-1px)}
+
+    .details{margin-top:14px;background:#111a2e;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;display:none}
+    .details h3{margin:0 0 8px;font-size:16px}
+    .details ul{margin:0;padding-left:18px}
+    .details li{margin:6px 0;line-height:1.45;color:#d1d5db}
+
+    .navline{margin-top:12px}
+    a{color:#38bdf8;text-decoration:none;font-weight:700}
+    a:hover{text-decoration:underline}
+    .note{margin-top:10px;padding:10px 12px;border-radius:12px;border:1px dashed rgba(56,189,248,.35);background:rgba(56,189,248,.08);color:#c7f0ff;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <h1>After 10th - Studies Guidance</h1>
+      <p>Click any stream/trade/course to see: <b>what you can become in future</b>.</p>
+      <div class="navline">
+        career-guide.html← Back to Career Guide</a>
+      </div>
+      <div class="note">
+        Tip: Choose based on your interest + strengths (Math/Science/Commerce/Skill-based).
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Intermediate Streams</h2>
+        <div class="chips" id="chips_inter"></div>
+      </div>
+
+      <div class="card">
+        <h2>Diploma / Polytechnic</h2>
+        <div class="chips" id="chips_diploma"></div>
+      </div>
+
+      <div class="card">
+        <h2>ITI Trades</h2>
+        <div class="chips" id="chips_iti"></div>
+      </div>
+    </div>
+
+    <div id="details" class="details"></div>
+  </div>
+
+  <script>
+    const data = {
+      inter: {
+        "MPC": {
+          path: ["Intermediate (MPC) → B.Tech/B.E, B.Sc (Math/Physics/CS), NDA (after 12th), etc."],
+          careers: ["Engineer (CSE/ECE/EEE/Mech/Civil)", "Data/IT roles (with skills)", "Defence (NDA after 12th)", "Teaching path (later with degree)"]
+        },
+        "BiPC": {
+          path: ["Intermediate (BiPC) → MBBS/BDS (via entrance), B.Pharm, Nursing, Paramedical, B.Sc"],
+          careers: ["Doctor", "Pharmacist", "Nurse", "Lab Technician", "Biotech/Research (after degree)"]
+        },
+        "CEC": {
+          path: ["Intermediate (CEC) → B.Com/BBA/BBM, CA/CS/CMA foundation, Law (later)"],
+          careers: ["Chartered Accountant (CA)", "Accountant", "Banking", "Business/Commerce roles", "Company Secretary (CS)"]
+        },
+        "MEC": {
+          path: ["Intermediate (MEC) → B.Com/BA Economics/BBA, Finance & analytics skills"],
+          careers: ["Accountant", "Banking", "Business Analyst (with skills)", "Economics/Finance careers"]
+        },
+        "HEC": {
+          path: ["Intermediate (HEC) → BA, Journalism, Design, Hotel Management, etc."],
+          careers: ["Teacher (after degree + B.Ed)", "Content/Media roles", "Govt exams (after degree)", "Public administration path"]
+        }
+      },
+
+      diploma: {
+        "Diploma CSE": {
+          path: ["Diploma (CSE) → Job OR B.Tech (lateral entry) + certifications"],
+          careers: ["Junior Developer", "IT Support", "Network Technician", "Cloud Support (with training)"]
+        },
+        "Diploma ECE": {
+          path: ["Diploma (ECE) → Job OR B.Tech (lateral entry)"],
+          careers: ["Electronics Technician", "Telecom Support", "Embedded trainee"]
+        },
+        "Diploma Mechanical": {
+          path: ["Diploma (Mech) → Job OR B.Tech (lateral entry)"],
+          careers: ["Maintenance Technician", "Production/Quality roles", "CAD operator (with training)"]
+        },
+        "Diploma Civil": {
+          path: ["Diploma (Civil) → Job OR B.Tech (lateral entry)"],
+          careers: ["Site Supervisor", "AutoCAD Draftsman", "Survey assistant"]
+        },
+        "Diploma Pharmacy (D.Pharm - where available)": {
+          path: ["D.Pharm → Pharmacist registration (as per rules) → Job / further study"],
+          careers: ["Pharmacist (where eligible)", "Medical store/Healthcare roles"]
+        }
+      },
+
+      iti: {
+        "ITI Electrician": {
+          path: ["ITI → Apprenticeship → Job"],
+          careers: ["Electrician", "Industrial maintenance", "Wiring technician"]
+        },
+        "ITI Fitter": {
+          path: ["ITI → Apprenticeship → Job"],
+          careers: ["Fitter", "Plant maintenance", "Machine assembly"]
+        },
+        "ITI Welder": {
+          path: ["ITI → Job"],
+          careers: ["Welder", "Fabrication", "Workshop technician"]
+        },
+        "ITI COPA (Computer Operator & Programming Assistant)": {
+          path: ["ITI COPA → Job + basic IT certifications"],
+          careers: ["Computer Operator", "Data Entry", "Office IT assistant", "Junior support roles"]
+        },
+        "ITI Plumber": {
+          path: ["ITI → Job"],
+          careers: ["Plumber", "Maintenance technician"]
+        }
+      }
+    };
+
+    function renderChips(containerId, groupKey) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = "";
+      Object.keys(data[groupKey]).forEach(name => {
+        const d = document.createElement("div");
+        d.className = "chip";
+        d.textContent = name;
+        d.onclick = () => showDetails(name, data[groupKey][name]);
+        container.appendChild(d);
+      });
+    }
+
+    function showDetails(title, info) {
+      const box = document.getElementById("details");
+      box.style.display = "block";
+      box.innerHTML = `
+        <h3>${title}</h3>
+        <ul>
+          <li><b>Study Path:</b> ${info.path.join(" | ")}</li>
+          <li><b>What you can become:</b> ${info.careers.join(" | ")}</li>
+        </ul>
+        <div class="note">This is guidance for clarity. Final options depend on colleges, eligibility, and exams.</div>
+      `;
+      box.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    renderChips("chips_inter", "inter");
+    renderChips("chips_diploma", "diploma");
+    renderChips("chips_iti", "iti");
+  </script>
+</body>
+</html>

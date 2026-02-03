@@ -117,4 +117,12 @@
     border-radius: 8px;
     border: 2px solid #2c5364;
 }
+#discover-truth iframe {
+  height: 750px;
+}
 
+@media screen and (max-width:768px){
+  #discover-truth iframe {
+    height: 520px;
+  }
+}
