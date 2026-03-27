@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>After Intermediate - Studies Guidance</title>
+  <style>
+    body{margin:0;font-family:Arial;background:#0b1220;color:#e5e7eb}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    .top{background:#111a2e;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
+    h1{margin:0;font-size:20px}
+    p{color:#a3a3a3;margin:8px 0 0;font-size:14px;line-height:1.5}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .chip{cursor:pointer;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.06);font-weight:700;font-size:13px}
+    .chip:hover{border-color:rgba(34,197,94,.45);transform:translateY(-1px)}
+    .details{margin-top:14px;background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;display:none}
+    .details h3{margin:0 0 8px;font-size:16px}
+    .details ul{margin:0;padding-left:18px;color:#d1d5db}
+    .details li{margin:6px 0;line-height:1.45}
+    a{color:#38bdf8;text-decoration:none;font-weight:700}
+    a:hover{text-decoration:underline}
+    .note{margin-top:10px;padding:10px 12px;border-radius:12px;border:1px dashed rgba(56,189,248,.35);background:rgba(56,189,248,.08);color:#c7f0ff;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <h1>After Intermediate - Studies Guidance</h1>
+      <p>Choose your stream below to see higher studies + career outcomes.</p>
+      <p>career-guide.html← Back to Career Guide</a></p>
+      <div class="chips" id="chips"></div>
+      <div class="note">Tip: Choose based on interest + entrance exams + budget + location.</div>
+    </div>
+
+    <div id="details" class="details"></div>
+  </div>
+
+  <script>
+    const streams = {
+      "MPC": {
+        study: ["B.Tech/B.E (CSE/ECE/EEE/Mech/Civil)", "B.Sc (Math/Physics/CS)", "BCA"],
+        careers: ["Software Engineer", "Network Engineer", "Core Engineer", "Data roles (with skills)"]
+      },
+      "BiPC": {
+        study: ["MBBS/BDS (Entrance)", "B.Pharm/D.Pharm", "B.Sc Nursing", "Paramedical"],
+        careers: ["Doctor", "Pharmacist", "Nurse", "Lab/Healthcare careers"]
+      },
+      "CEC / MEC": {
+        study: ["B.Com", "BBA/BBM", "BA Economics", "Law (LLB)"],
+        careers: ["CA", "CS", "CMA", "Accountant", "Business roles"]
+      },
+      "HEC": {
+        study: ["BA", "Journalism", "Hotel Management", "Design", "Teaching path (B.Ed later)"],
+        careers: ["Teacher", "Content/Media", "Govt exams after degree", "Hospitality roles"]
+      }
+    };
+
+    function render(){
+      const c = document.getElementById("chips");
+      c.innerHTML = "";
+      Object.keys(streams).forEach(k=>{
+        const el = document.createElement("div");
+        el.className="chip";
+        el.textContent=k;
+        el.onclick = ()=>show(k);
+        c.appendChild(el);
+      });
+    }
+    function show(k){
+      const box = document.getElementById("details");
+      const info = streams[k];
+      box.style.display="block";
+      box.innerHTML = `
+        <h3>${k}</h3>
+        <ul>
+          <li><b>Further Studies:</b> ${info.study.join(" | ")}</li>
+          <li><b>What you can become:</b> ${info.careers.join(" | ")}</li>
+        </ul>
+      `;
+      box.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+    render();
+  </script>
+</body>
+</html>

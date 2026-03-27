@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Career Guide</title>
+
+  <style>
+    body{margin:0;font-family:Arial;background:#0b1220;color:#e5e7eb}
+    .wrap{max-width:1000px;margin:0 auto;padding:18px}
+    .card{background:#111a2e;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;margin-bottom:14px}
+    h1{margin:0;font-size:20px}
+    p{color:#a3a3a3;margin-top:8px;font-size:14px}
+    .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    button{cursor:pointer;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:#0f172a;color:#e5e7eb;font-weight:700;transition:.15s}
+    button:hover{transform:translateY(-1px);border-color:rgba(56,189,248,.5)}
+    .panel{display:none;background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;margin-top:12px}
+    .panel.active{display:block}
+    .panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+    .closebtn{background:transparent;border:1px solid rgba(255,255,255,.1);padding:8px 10px;border-radius:10px;font-weight:700}
+    .subTitle{font-size:15px;margin:0}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="card">
+      <h1>Career Guide</h1>
+      <p>Select your education level. Then choose Studies Guidance or Employment Guidance.</p>
+
+      <div class="btnrow">
+        <button onclick="openStage('after10')">After 10th</button>
+        <button onclick="openStage('afterInter')">After Intermediate</button>
+        <button onclick="openStage('afterGrad')">After Graduate</button>
+      </div>
+    </div>
+
+    <div id="after10" class="panel">
+      <div class="panelhead">
+        <h2 class="subTitle">After 10th</h2>
+        <button class="closebtn" onclick="closeStage('after10')">✖ Close</button>
+      </div>
+      <div class="btnrow">
+        <button onclick="goTo('after10-studies.html')">Studies Guidance</button>
+        <button onclick="goTo('after10-employment.html')">Employment Guidance</button>
+      </div>
+    </div>
+
+    <div id="afterInter" class="panel">
+      <div class="panelhead">
+        <h2 class="subTitle">After Intermediate</h2>
+        <button class="closebtn" onclick="closeStage('afterInter')">✖ Close</button>
+      </div>
+      <div class="btnrow">
+        <button onclick="goTo('after-inter-studies.html')">Studies Guidance</button>
+        <button onclick="goTo('after-inter-employment.html')">Employment Guidance</button>
+      </div>
+    </div>
+
+    <div id="afterGrad" class="panel">
+      <div class="panelhead">
+        <h2 class="subTitle">After Graduate</h2>
+        <button class="closebtn" onclick="closeStage('afterGrad')">✖ Close</button>
+      </div>
+      <div class="btnrow">
+        <button onclick="goTo('after-grad-studies.html')">Studies Guidance</button>
+        <button onclick="goTo('after-grad-employment.html')">Employment Guidance</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function openStage(id){
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    function closeStage(id){
+      document.getElementById(id).classList.remove('active');
+    }
+    function goTo(page){
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>
