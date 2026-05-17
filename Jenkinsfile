@@ -35,7 +35,7 @@ pipeline {
             sh '''
                 docker tag student-app:$IMAGE_TAG $DOCKER_USER/student-app:$IMAGE_TAG
                 echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-                docker push $DOCKER_USER/student-app:$IMAGE_TAG
+                docker push $DOCKER_USER/inevitable-computer-education:$IMAGE_TAG
             '''
         }
     }
