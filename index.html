@@ -1,282 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<div style="
-    background: #28a745;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    margin: 20px;
-">
-    ✅ LIVE UPDATE: New Version Deployed Successfully 🚀 (Version 2)
-</div>
-``
-  <meta charset="UTF-8">
-  <title>The Inevitable Computer Education & Software Training</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inevitable Computer Education</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #333;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #eef2f7;
+}
 
-    header {
-      background: linear-gradient(90deg, #003366, #0059b3);
-      color: white;
-      padding: 25px;
-      text-align: center;
-    }
-
-    nav {
-      background: #002b5c;
-      padding: 12px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      background: url("https://images.unsplash.com/photo-1526378722484-d9a21c98a8a1")
-                  center/cover no-repeat;
-      color: white;
-      padding: 90px 20px;
-      text-align: center;
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      color: #003366;
-      margin-bottom: 30px;
-    }
-
-    .course-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      transition: 0.3s;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #0059b3;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-top: 15px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 315px;
-      border-radius: 10px;
-      border: none;
-    }
-
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-/* --- MSME Top Bar (non-intrusive) --- */
+/* Top Banner */
 .topbar {
-  background: #fffbeb;
-  color: #92400e;
-  padding: 8px 12px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 14px;
-  border-bottom: 1px solid #f5e6b3;
-}
-.topbar .msme-badge {
-  display: inline-block;
   background: #f59e0b;
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 999px;
-  margin-right: 10px;
-  letter-spacing: 0.5px;
-}
-  </style>
-  <style>
-/* --- MSME Top Bar (non-intrusive) --- */
-.topbar {
-  background: #fffbeb;
-  color: #92400e;
-  padding: 8px 12px;
+  color: white;
   text-align: center;
-  font-weight: 700;
-  font-size: 14px;
-  border-bottom: 1px solid #f5e6b3;
+  padding: 8px;
+  font-weight: bold;
 }
-.topbar .msme-badge {
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* Navbar */
+nav {
+  background: #0b3d91;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+}
+
+.hero h2 {
+  font-size: 26px;
+}
+
+.btn {
+  background: #ff9800;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 15px;
   display: inline-block;
-  background: #f59e0b;
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 999px;
-  margin-right: 10px;
-  letter-spacing: 0.5px;
 }
-  </style>
-<style>  /* --- Promo Banner (non-intrusive, namespaced) --- */  .mk-promo{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:16px;flex-wrap:wrap}  .mk-promo__img{flex:0 0 360px;max-width:100%;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.15)}  .mk-promo__info{color:#ffffff;background:rgba(0,0,0,.35);padding:12px 16px;border-radius:10px;backdrop-filter:blur(2px)}  .mk-promo__info a{color:#fffbeb;text-decoration:underline;font-weight:700}  .mk-promo--right{flex-direction:row}  .mk-promo--left{flex-direction:row-reverse}  @media (max-width:720px){.mk-promo{flex-direction:column}.mk-promo__info{width:100%;text-align:center}}  </style>
+
+/* Cards */
+.section {
+  padding: 40px;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+/* Footer */
+footer {
+  background: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+
 </head>
 
 <body>
-<div class="topbar" role="status" aria-label="MSME registration information">
-  <span class="msme-badge">MSME</span>
-  UDYAM Registration Certificate Number: <strong>UDYAM-AP-05-0014536</strong>
-</div>
-<div class="topbar" role="status" aria-label="MSME registration information">
-  <span class="msme-badge">MSME</span>
-  UDYAM Registration Certificate Number: <strong>UDYAM-AP-05-0014536</strong>
-</div>
-<div class="topbar" role="status" aria-label="MSME registration information">
-  <span class="msme-badge">MSME</span>
-  UDYAM Registration Certificate Number: <strong>UDYAM-AP-05-0014536</strong>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  MSME Certified | UDYAM-AP-05-0014536
 </div>
 
+<!-- HEADER -->
 <header>
-  <h1>THE INEVITABLE COMPUTER EDUCATION & SOFTWARE TRAINING</h1>
-  <p>Registered Under UDYAM – Government of India</p>
+  <h1>🚀 INEVITABLE COMPUTER EDUCATION</h1>
+  <p>Build Your IT Career with Real-Time Training</p>
 </header>
 
+<!-- NAV -->
 <nav>
   <a href="#home">Home</a>
   <a href="#courses">Courses</a>
   <a href="#trainer">Trainer</a>
-  <a href="#register">Register</a>
-  <a href="#youtube">YouTube</a>
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero" id="home">
-<div class="mk-promo mk-promo--right">    <img class="mk-promo__img" src="assets/coure-pamplates-banglore.png" alt="Course Banner">    <div class="mk-promo__info">      <div><strong>Full address:</strong> 53/17-1, R.V. Nagar, Kadapa – 516003</div>      <div><a href="https://maps.google.com/?q=YOUR+LOCATION" target="_blank" rel="noopener">View on Google Maps</a></div>    </div>  </div>
-  <h2>Build Your IT Career With Real-Time Industry Training</h2>
-  <p>Linux | AWS | DevOps | Azure | Windows Server</p>
-  <a class="btn" href="#register">Enroll Now</a>
+  <h2>Learn Linux | AWS | DevOps</h2>
+  <p>Real-Time Training with Industry Experts</p>
+  <a href="#courses" class="btn">Explore Courses</a>
 </div>
 
-<section id="courses">
-  <h2>Courses We Offer</h2>
-  <div class="course-list">
-    <div class="card">Linux Administration (RHCSA / RHCE)</div>
+<!-- COURSES -->
+<div class="section" id="courses">
+  <h2>🔥 Our Courses</h2>
+  <div class="cards">
+    <div class="card">Linux Administration</div>
     <div class="card">AWS Cloud</div>
-    <div class="card">DevOps (Docker, Kubernetes, CI/CD)</div>
-    <div class="card">Microsoft Azure</div>
-    <div class="card">Windows Server</div>
+    <div class="card">Docker & Jenkins</div>
+    <div class="card">DevOps</div>
+    <div class="card">Azure</div>
   </div>
-</section>
+</div>
 
-<section id="trainer">
-  <h2>About the Trainer</h2>
+<!-- TRAINER -->
+<div class="section" id="trainer">
+  <h2>👨‍🏫 Trainer</h2>
   <div class="card">
     <h3>Shaik Nasir Ahamed</h3>
     <p>
-      ✔ 13+ Years of IT Experience<br>
-      ✔ Worked in <strong>TCS & IBM</strong><br><br>
-      The trainer will transfer real-time industry knowledge to
-      students who register for the courses, with hands-on practical
-      sessions and interview-oriented training.
+      ✔ 13+ Years Experience<br>
+      ✔ Worked in TCS & IBM<br>
+      ✔ Real-time practical training
     </p>
   </div>
-</section>
-
-<section id="register">
-  <h2>Student Registration</h2>
-  <p style="text-align:center;">
-    Click below to register. Your details will be securely captured.
-  </p>
-<div style="padding:20px; text-align:center;">
-    <h2>🔥 Trending Courses</h2>
-    <ul style="list-style:none; font-size:18px;">
-        <li>✅ AWS DevOps</li>
-        <li>✅ Docker & Jenkins</li>
-        <li>✅ Linux Administration</li>
-        <li>✅ Full Stack Development</li>
-    </ul>
 </div>
 
-  <div style="text-align:center;">
-    <a class="btn"
-       href="https://forms.gle/YTbigW2uQpe4MZwZ6"
-       target="_blank">
-       Register Now
-    </a>
-  </div>
-</section>
+<!-- REGISTER -->
+<div class="section">
+  <h2>📋 Register Now</h2>
+  <a class="btn" href="https://forms.gle/YTbigW2uQpe4MZwZ6" target="_blank">
+    Register Here
+  </a>
+</div>
 
-<section id="youtube">
-  <h2>Linux Demo Class</h2>
-  <iframe
-    src="https://www.youtube.com/embed/RWA0A6qpcLs"
-    allowfullscreen>
-  </iframe>
-
-  <p style="text-align:center; margin-top:15px;">
-    Watch more videos on our
-    <a href="https://www.youtube.com/@inevitablecomputereducation"
-       target="_blank">
-       YouTube Channel
-    </a>
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <h2>📍 Contact</h2>
+  <p>
+    📞 +91 9176337813 <br>
+    📍 R.V Nagar, Kadapa
   </p>
-</section>
+</div>
 
-<section id="feedback">
-  <h2>Student Feedback</h2>
-  <div class="course-list">
-    <div class="card">⭐⭐⭐⭐⭐<br>Excellent Linux training – Ravi</div>
-    <div class="card">⭐⭐⭐⭐⭐<br>Very clear explanation – Anusha</div>
-    <div class="card">⭐⭐⭐⭐⭐<br>Best DevOps training – Suresh</div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p style="text-align:center;">
-    📞 +91 9176337813<br>
-    📍 53/17-1, R.V. Nagar, Kadapa – 516003
-  </p>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <p>&copy; 2025 THE INEVITABLE COMPUTER EDUCATION & SOFTWARE TRAINING</p>
+  <p>© 2026 Inevitable Computer Education</p>
 </footer>
 
 </body>
