@@ -42,16 +42,11 @@ pipeline {
 }
 
 
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
 
              stage('Deploy Container') {
     steps {
         sh 'docker rm -f student-app-container || true'
-        sh 'docker run -d -p 3000:3000 --name student-app-container shaiknasirahamed/inevitable-computer-education:$IMAGE_TAG'
+        sh 'docker run -d -p 3000:80 --name inevitable-computer  shaiknasirahamed/inevitable-computer-education:$IMAGE_TAG'
     }
 }
     }
