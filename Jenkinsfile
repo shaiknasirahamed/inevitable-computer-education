@@ -21,7 +21,7 @@ pipeline {
         script {
             env.IMAGE_TAG = "${env.BUILD_NUMBER}"
         }
-        sh "docker build -t student-app:${IMAGE_TAG} ."
+        sh "docker build -t inevitable-computer-education:${IMAGE_TAG} ."
     }
 }
 
@@ -33,7 +33,7 @@ pipeline {
             passwordVariable: 'DOCKER_PASS'
         )]) {
             sh '''
-                docker tag student-app:$IMAGE_TAG $DOCKER_USER/student-app:$IMAGE_TAG
+                docker tag inevitable-computer-education:$IMAGE_TAG $DOCKER_USER/inevitbale-computer-eucation:$IMAGE_TAG
                 echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
                 docker push $DOCKER_USER/inevitable-computer-education:$IMAGE_TAG
             '''
